@@ -35,7 +35,7 @@ public class Task1
 
         return clean.Length > 1 && clean.SequenceEqual(clean.Reverse());
     }
-
+    //
     // Видалення слів з непарною кількістю приголосних
     static string RemoveOddConsonantWords(string text)
     {

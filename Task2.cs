@@ -4,9 +4,9 @@ using System.Linq;
 using System.Collections.Generic;
 using System.Text;
 namespace Lab3csharp;
-//2. Створити програми для роз’язування задач згідно свого варіанта.
-//Дано файл, елементами якого є окремі символи, що складають слово "олгаритм". Отримати
-//новий файл, в якому літери слова "алгоритм" будуть розміщені правильно.
+    //2. Створити програми для роз’язування задач згідно свого варіанта.
+    //Дано файл, елементами якого є окремі символи, що складають слово "олгаритм". Отримати
+    //новий файл, в якому літери слова "алгоритм" будуть розміщені правильно.
 
 public class Task2
 {
@@ -15,18 +15,14 @@ public class Task2
 
     public static int Exercise2(string[] args)
     {   
-                Console.WriteLine($"Exercise 2.");
+        Console.WriteLine($"Exercise 2.");
         Console.OutputEncoding = Encoding.UTF8;
         Console.InputEncoding = Encoding.UTF8;
 
-        if (args.Length < 2)
-        {
-            Console.WriteLine("Використання: app.exe <вхідний_файл> <вихідний_файл>");
-            return 1;
-        }
 
-        string inputPath = args[0];
-        string outputPath = args[1];
+
+        string inputPath = "/home/kiriko/Documents/CSharpLabs/Lab3FileInput";
+        string outputPath = "/home/kiriko/Documents/CSharpLabs/Lab3FileOutput";
 
         if (!File.Exists(inputPath))
         {
@@ -44,7 +40,7 @@ public class Task2
             Console.WriteLine($"Помилка читання файлу: {ex.Message}");
             return 1;
         }
-
+        //
         // Витягнути лише літери (мінус пробіли, пунктуацію тощо)
         List<char> letters = content.Where(char.IsLetter).Select(char.ToLower).ToList();
 
